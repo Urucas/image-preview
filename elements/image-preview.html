@@ -1,0 +1,66 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<polymer-element name="image-preview" attributes="default value bttClass imgClass containerClass">
+  <template>
+		<style>
+		#fp-file{
+			display:none;
+		}
+		.fp-default-btt {
+			background: #333;
+			color: rgb(149, 149, 149);
+			padding:12px;
+			border:none;
+			-webkit-border-radius: 1px;
+			-moz-border-radius: 1px;
+			border-radius: 1px;
+			width:250px;
+			cursor:pointer;
+		}
+		.fp-default-img {
+			width:250px;
+			height:auto;
+		}
+		.fp-default-container{
+			width:250px;
+			padding:2px;
+			border:1px solid #616161;
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+		}
+		</style>
+		<div class="{{containerClass}}">
+			<img src="{{default}}" id="fp-image" class="{{imgClass}}" />
+			<button id="fp-button" class="{{bttClass}}">{{value}}</button>
+			<input type="file" id="fp-file" />
+		</div>
+  </template>
+	<script>
+    Polymer('image-preview', {
+			value: 'Choose image',
+			bttClass: 'fp-default-btt',
+			imgClass: 'fp-default-img',
+			containerClass: 'fp-default-container',
+			ready: function() {
+				if(!window.FileReader) {  
+					console.log("FileReader not available, this webcomponent will be useless!");
+					return;
+				}
+				var obj = this.$;
+				var fileEl = obj["fp-file"];
+				var imgEl  = obj["fp-image"];
+				var bttEl  = obj["fp-button"];
+
+				bttEl.addEventListener('click', function(e){
+					fileEl.click();
+				});
+				fileEl.addEventListener('change', function(e) {
+					var file = fileEl.files[0];
+					var reader = new FileReader();
+					reader.onload = function(e) {
+						imgEl.src = e.target.result;
+					}
+					reader.readAsDataURL(file); 
+				});
+			}
+    });
+  </script>
+</polymer-element>

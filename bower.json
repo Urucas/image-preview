@@ -1,0 +1,32 @@
+{
+  "name": "file-preview",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Urucas/file-preview",
+  "authors": [
+    "Urucas <hello@urucas.com>"
+  ],
+  "main": "elements/file-preview.html",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "polymer",
+    "polyfill",
+    "webcomponent",
+    "html",
+    "filereader",
+    "file",
+    "image"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.1"
+  }
+}
