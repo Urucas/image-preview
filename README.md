@@ -20,6 +20,8 @@ Demo
 ====
 <a href="http://urucas.github.io/image-preview/">http://urucas.github.io/image-preview/</a>
 
+<img src="https://raw.githubusercontent.com/Urucas/image-preview/master/image-preview-screen.png" />
+
 
 TO DO
 ===== 
