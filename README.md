@@ -13,7 +13,9 @@ Import polymer element into yor html
 
 Insert the webcomponent on your page,
 ```html
-<image-preview default="//urucas.com/images/no-image.jpg"></image-preview>
+<image-preview default="//urucas.com/images/no-image.jpg">
+  <input type="file" name="image"/>
+</image-preview>
 ```
 
 Demo
